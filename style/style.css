@@ -1,0 +1,269 @@
+/* CSS Document
+	Resetting browser default styles
+	All 
+	Buttons
+	Transition/animation
+	Main slider
+	Header
+		Top menu
+	Container
+	About block
+	pollution block
+	Energy block
+	Environment block
+	Contact block
+	Footer 
+	Media Queries
+*/
+
+
+/* Resetting browser default styles */
+html, body {height:100%;-webkit-text-size-adjust:100%;}
+body {font:14px/22px Verdana, Sans-Serif;color:#666;background:#fff;overflow-x:hidden;}
+div, html, body, p, ul, ol, li, a, form, img, table, td, h1, h2, h3, h4, h5, h6, blockquote, header, section, footer, aside, nav, article, figure, figcaption, dt, dd, dl {margin:0;padding:0;} 
+header, section, footer, aside, nav, article, figure, figcaption {display: block;}
+table {border-collapse:collapse;}
+img {border:none;max-width:100%;height:auto;}
+iframe, object, embed {max-width:100%;}
+ul, li {list-style:none;}
+input {vertical-align:middle;}
+input:focus, textarea:focus {outline:none;}
+button, input[type="submit"] {cursor:pointer;-webkit-appearance:none;}
+a, a:active, a:visited {text-decoration:none;color:#7DBB00;}
+a:hover {text-decoration:underline;color:#629105;}
+::selection {background:#2ecc71;color:#ffffff;}
+::-moz-selection {background:#2ecc71;color:#ffffff;}
+
+/* All */
+.wrapper {width:100%;padding:0 20px;-webkit-box-sizing:border-box;box-sizing:border-box;position:relative;}
+.clear:after, .wrapper:after {content:'';display:block;height:0;clear:both;}
+h1, h2, h3, h4, h5, h6 {padding-bottom:20px;text-align:center;}
+h1 {font:300 46px 'Oxygen';}
+h2 {font:300 40px 'Oxygen';}
+h3 {font:300 34px 'Oxygen';}
+h4 {font:300 28px 'Oxygen';}
+h5 {font:300 22px 'Oxygen';}
+h6 {font:300 16px 'Oxygen';}
+input[type="text"], textarea {border:1px solid #666;border-radius:0;height:50px;font:300 16px 'Oxygen', sans-serif;padding:0 10px;box-sizing:border-box;width:100%;color:#222;}
+textarea {height:195px;padding:10px;}
+input.error {background:rgba(193,69,30,.5);border-color:#C1451E;color:#fff;}
+
+
+/* Buttons */
+.button, .button:visited {color:#fff;padding:0 15px;min-height:40px;font:300 20px/40px "Oxygen";border:1px solid #7DBB00;border-radius:7px;background:#7DBB00;display:inline-block;vertical-align:middle;zoom:1;*display:inline;text-align:center;position:relative;box-shadow:#629105 0 4px 0 0;}
+.button:hover {color:#fff;background:#8aca0a;text-decoration:none;}
+.button_transparent, .button_transparent:visited {background:none;border-color:#fff;box-shadow:none;}
+.button_transparent:hover {background:rgba(255,255,255,.3);}
+
+
+/* Transition/animation */
+@-webkit-keyframes spin { 0% { -webkit-transform:rotate(0deg); } 100% { -webkit-transform:rotate(360deg); }}
+@keyframes spin { 0% { transform:rotate(0deg); } 100% { transform:rotate(360deg); }}
+@-webkit-keyframes wave { 0% { background-position:0 0;top:-5px;} 50% {top:-2px;} 100% { background-position:51px 0;top:-5px;}}
+@keyframes wave { 0% { background-position:0 0;top:-5px;} 50% {top:-2px;} 100% { background-position:51px 0;top:-5px;}}
+@-webkit-keyframes pulse { 0% { -webkit-transform:scale(1); } 50% { -webkit-transform:scale(0.9);} 100% { -webkit-transform:scale(1);}}
+@keyframes pulse { 0% { transform:scale(1); } 50% { transform:scale(0.9);} 100% { transform:scale(1);}}
+@-webkit-keyframes slidedown { 0% { background-position:right -40px;} 30% { background-position:right center;} 70% { background-position:right center;} 100% { background-position:right 80px;}}
+@keyframes slidedown { 0% { background-position:right -40px;} 30% { background-position:right center;} 70% { background-position:right center;} 100% { background-position:right 80px;}}
+@-webkit-keyframes wind { 0% { background-position:0 0;} 100% { background-position:right 0;}}
+@keyframes wind { 0%  {background-position:0 0;} 100% { background-position:right 0;}}
+@-webkit-keyframes wind_blow { 0% { left:0;margin-top:30px;} 20% { left:20%;margin-top:0;}  40% { left:40%;margin-top:20px;}  60% { left:60%;margin-top:0;}  80% { left:80%;margin-top:25px;} 100% { left:100%;margin-top:0;}}
+@keyframes wind_blow { 0% { left:0;margin-top:30px;} 20% { left:20%;margin-top:0;}  40% { left:40%;margin-top:20px;}  60% { left:60%;margin-top:0;}  80% { left:80%;margin-top:25px;} 100% { left:100%;margin-top:0;}}
+@-webkit-keyframes water { 0% { background-position:0 0;} 100% { background-position:right 0;}}
+@keyframes water { 0%  {background-position:0 0;bottom:0;} 25% { bottom:-15px;} 50% { bottom:0;} 75% { bottom:-15px;} 100% { background-position:right 0;bottom:0;}}
+@-webkit-keyframes slideup { 0% { background-position:right -17px;} 30% { background-position:right center;} 70% { background-position:right center;} 100% { background-position:right 80px;}}
+@keyframes slideup { 0% { background-position:0 30px;opacity:1;} 30% { background-position:0 10px;opacity:.7;} 70% { background-position:0 -10px;opacity:.5;} 100% { background-position:0 -30px;opacity:0;}}
+@-webkit-keyframes flame { 0% {-webkit-transform:skew(0deg, 0deg);opacity:1;} 25% {-webkit-transform:skew(3deg, 0deg);opacity:.9;} 50% {-webkit-transform:skew(0deg, 0deg);opacity:.8;} 75% {-webkit-transform:skew(-3deg, 0deg);opacity:.9;} 100% {-webkit-transform:skew(0deg, 0deg);opacity:1;}}
+@keyframes flame { 0% {transform:skew(0deg, 0deg);opacity:1;} 25% {transform:skew(3deg, 0deg);opacity:.9;} 50% {transform:skew(0deg, 0deg);opacity:.8;} 75% {transform:skew(-3deg, 0deg);opacity:.9;} 100% {transform:skew(0deg, 0deg);opacity:1;}}
+.bx-prev, .bx-next, .button {-webkit-transition:background-color linear .3s;transition:background-color linear .3s;}
+.bx-pager .bx-pager-item .bx-pager-link {-webkit-transition:opacity linear .3s;transition:opacity linear .3s;}
+
+
+/* Main slider */
+.main_slider {height:100%;max-height:100%;overflow:hidden;text-align:center;color:#fff;}
+.main_slider .bx-wrapper, .main_slider .bx-viewport, .main_slider ul, .main_slider li, .main_slider li:before {height:100%;}
+.main_slider li:before {content:'';display:inline-block;vertical-align:middle;zoom:1;*display:inline;}
+.main_slider li header {display:inline-block;vertical-align:middle;zoom:1;*display:inline;width:90%;height:auto;z-index:101;position:relative;padding-top:70px;}
+.main_slider li header:after, .main_slider li header .animation {content:'';display:block;position:absolute;top:0;left:50%;z-index:1;}
+.main_slider li.wind {background:#95c3c6;background-image:-webkit-linear-gradient(top left, #cde0e1, #95c3c6);background-image:linear-gradient(to bottom right, #cde0e1, #95c3c6);}
+.main_slider li.solar {background:#fda900;background-image:-webkit-linear-gradient(top left, #fdd400, #fda900);background-image:linear-gradient(to bottom right, #fdd400, #fda900);}
+.main_slider li.water {background:#54a6d8;background-image:-webkit-linear-gradient(top left, #6bf0ff, #54a6d8);background-image:linear-gradient(to bottom right, #6bf0ff, #54a6d8);}
+.main_slider li.wind header:after {width:18px;height:60px;background:url(../images/icons/wind2.png) no-repeat;background:url(../images/icons/wind2.svg) no-repeat, none;background-size:18px 60px;margin-left:-9px;}
+.main_slider li.wind header .animation {width:70px;height:70px;background:url(../images/icons/wind.png) no-repeat;background:url(../images/icons/wind.svg) no-repeat, none;background-size:70px 70px;top:-29px;margin-left:-35px;-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear;}
+.main_slider li.solar header:after {width:65px;height:64px;background:url(../images/icons/sun.png) no-repeat;background:url(../images/icons/sun.svg) no-repeat, none;background-size:65px 64px;margin-left:-32px;}
+.main_slider li.solar header .animation {width:65px;height:64px;background:url(../images/icons/sun2.png) no-repeat;background:url(../images/icons/sun2.svg) no-repeat, none;background-size:65px 64px;margin-left:-32px;-webkit-animation:pulse 1.2s infinite linear;animation:pulse 1.2s infinite linear;}
+.main_slider li.water header .animation {width:57px;height:53px;background:url(../images/icons/wave.png) repeat-x;background:url(../images/icons/wave.svg) repeat-x, none;top:-5px;margin-left:-30px;-webkit-animation:wave 2s infinite linear;animation:wave 2s infinite linear;}
+.main_slider li h2 {word-wrap:break-word;text-shadow:rgba(255,255,255,.6) 0 0 3px;padding-top:8px;}
+.main_slider li h5, .main_slider li .more_animation {display:none;}
+.main_slider li h2, .main_slider li h5, .main_slider li p {position:relative;z-index:1;}
+.main_slider li .button {padding-right:55px;background:url(../images/icons/arrow_down.png) right center no-repeat;background:url(../images/icons/arrow_down.svg) right center no-repeat, none;-webkit-animation:slidedown 3s infinite linear;animation:slidedown 3s infinite linear;}
+.main_slider li .button:hover {background-color:rgba(255,255,255,.3);}
+
+
+/* Header */
+.header {position:absolute;top:0;left:0;z-index:1000;width:100%;z-index:1000;}
+.header.header_fixed {position:fixed;}
+.header h1 {position:absolute;top:10px;left:20px;font-size:0;line-height:0;}
+.header.header_fixed h1 {display:none;}
+.header h1 a {display:block;background:url(../images/logo.png) no-repeat;background:url(../images/logo.svg) no-repeat, none;width:41px;height:66px;}
+	/* Top menu */
+.menu_trigger {width:30px;height:21px;background:url(../images/icons/menu_trigger.png) center center no-repeat;background:url(../images/icons/menu_trigger.svg) center center no-repeat, none;top:12px;right:10px;position:absolute;cursor:pointer;z-index:1000;padding:10px;}
+.header_fixed .menu_trigger {background:#fff url(../images/icons/menu_trigger2.png) center center no-repeat;background:#fff url(../images/icons/menu_trigger2.svg) center center no-repeat, none;}
+.header .menu_trigger.close {width:25px;height:25px;background:url(../images/icons/close.png) center center no-repeat;background:url(../images/icons/close.svg) center center no-repeat, none;position:fixed;}
+.header nav {display:none;position:fixed;top:0;left:0;height:100%;width:100%;background:#000;background:rgba(0,0,0,.8);text-align:center;}
+.header nav:before {content:'';display:inline-block;vertical-align:middle;zoom:1;*display:inline;height:100%;}
+.header nav ul {display:inline-block;vertical-align:middle;zoom:1;*display:inline;}
+.header nav ul li {font:300 28px 'Oxygen';padding:10px 0;}
+.header nav ul li a, .header nav ul li a:visited {color:#fff;}
+.header nav ul li a.current, .header nav ul li a.current:visited {color:#7DBB00;}
+.header nav ul li a:hover {text-decoration:none;color:#7DBB00;}
+
+
+/* Container */
+.container {padding:50px 0;}
+.container .float_right, .container .float_left {margin:0 auto 15px auto;}
+.container .wrapper {max-width:960px;margin:0 auto;}
+.container .button {min-width:120px;}
+.container .circle_icon {width:170px;height:170px;font-size:0;line-height:170px;background:#7DBB00;border-radius:50%;text-align:center;position:relative;overflow:hidden;}
+.container .circle_icon img {vertical-align:middle;}
+.container p {padding-bottom:15px;}
+.parallax {background:url(../images/blank.gif) center center fixed;background-size:cover;color:#fff;overflow:hidden;}
+.parallax .wrapper:before {content:'';display:block;width:2000%;height:2000%;position:absolute;top:-1000px;left:-1000px;background:url(../images/backgrounds/pattern.png);}
+.parallax .wrapper * {position:relative;}
+
+
+
+/* Pollution block */
+.pollution_block {background-image:url(../images/backgrounds/pollution.jpg);}
+.pollution_block .circle_icon {background:#95c3c6;}
+.pollution_block .circle_icon .animation {width:15px;height:38px;background:url(../images/icons/smoke.png) no-repeat;background:url(../images/icons/smoke.svg) no-repeat, none;position:absolute;top:15px;left:100px;-webkit-animation:slideup 2s infinite linear;animation:slideup 2s infinite linear;}
+
+
+/* Energy block */
+.energy_block ul {margin-top:20px;}
+.energy_block ul li {padding:0 2% 35px 2%;text-align:center;}
+.energy_block ul li:last-child {padding-bottom:0;}
+.energy_block ul li .circle_icon {width:130px;height:130px;line-height:130px;margin:0 auto 20px auto;}
+.energy_block ul li .circle_icon.wind {background:#95c3c6;}
+.energy_block ul li .circle_icon.wind img {margin-top:13px;}
+.energy_block ul li .circle_icon.wind .animation {position:absolute;top:13px;left:30px;width:70px;height:70px;background:url(../images/icons/wind.png) no-repeat;background:url(../images/icons/wind.svg) no-repeat, none;background-size:70px 70px;-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear;}
+.energy_block ul li .circle_icon.solar {background:#fda900;}
+.energy_block ul li .circle_icon.solar .animation {position:absolute;top:33px;left:33px;width:65px;height:64px;background:url(../images/icons/sun2.png) no-repeat;background:url(../images/icons/sun2.svg) no-repeat, none;background-size:65px 64px;-webkit-animation:pulse 1.2s infinite linear;animation:pulse 1.2s infinite linear;}
+.energy_block ul li .circle_icon.water {background:#54a6d8;}
+.energy_block ul li .circle_icon.water .animation {position:absolute;top:0;left:36px;margin-top:38px;width:57px;height:53px;background:url(../images/icons/wave.png) repeat-x;background:url(../images/icons/wave.svg) repeat-x, none;-webkit-animation:wave 2s infinite linear;animation:wave 2s infinite linear;}
+.energy_block ul li .circle_icon.wave {background:#0796a6;}
+.energy_block ul li .circle_icon.wave .animation {position:absolute;top:0;left:36px;margin-top:40px;width:300%;height:100px;background:url(../images/icons/water.png) repeat-x;background:url(../images/icons/water.svg) repeat-x, none;bottom:0;left:0;position:absolute;-webkit-animation:water 13s infinite linear;animation:water 13s infinite linear;opacity:.8;}
+.energy_block ul li .circle_icon.wave .animation:before {content:'';display:block;width:300%;height:100px;background:url(../images/icons/water.png) repeat-x;background:url(../images/icons/water.svg) repeat-x, none;bottom:0;left:0;position:absolute;-webkit-animation:water 14s infinite linear;animation:water 14s infinite linear;opacity:.6;margin-left:-50px;}
+.energy_block ul li .circle_icon.geothermal {background:#c1451e;}
+.energy_block ul li .circle_icon.geothermal img {top:-20px;position:relative;}
+.energy_block ul li .circle_icon.geothermal .animation {position:absolute;bottom:0;left:27px;width:22px;height:58px;background:url(../images/icons/arrow_up.png) repeat-x;background:url(../images/icons/arrow_up.svg) repeat-x, none;-webkit-animation:slideup 2s infinite linear;animation:slideup 2s infinite linear;}
+.energy_block ul li .circle_icon.geothermal .animation2 {left:55px;}
+.energy_block ul li .circle_icon.geothermal .animation3 {left:82px;}
+.energy_block ul li .circle_icon.biofuel img {top:15px;position:relative;}
+.energy_block ul li .circle_icon.biofuel .animation {position:absolute;top:28px;left:40px;width:51px;height:72px;background:url(../images/icons/flame.png) no-repeat;background:url(../images/icons/flame.svg) no-repeat, none;-webkit-animation:flame 2s infinite linear;animation:flame 2s infinite linear;}
+
+
+/* Environment block */
+.environment_block {background-image:url(../images/backgrounds/environment.jpg);}
+.environment_block ul li {clear:both;padding:20px 0;}
+.environment_block ul li p {text-align:center;}
+.environment_block ul li .waste_management {background:#71a901;}
+.environment_block ul li .reuse_trash {background:#669801;}
+.environment_block ul + p {clear:both;text-align:center;}
+
+
+/* Contact block */
+#contact {padding-bottom:0;}
+#contact_map {width:100%;height:340px;}
+#contact_map img {max-width:1000%;}
+#success, #error {display:none;padding:10px;margin:20px 0 23px 0;color:#fff;}
+#success {background:#7DBB00;border:1px solid #629105;}
+#error {background:#C1451E;border:1px solid #943618;}
+#contact_form {margin:20px 0 40px 0;}
+#contact_form li {padding-bottom:23px;position:relative;}
+#contact_form li label.error {position:absolute;bottom:1px;left:5px;background:#C1451E;border-radius:3px;padding:1px 5px;z-index:3;color:#fff;}
+#contact_form li label.error:after {content:'';position:absolute;bottom:100%;left:20px;border:solid transparent;height:0;width:0;border-bottom-color:#C1451E;border-width:10px;margin-left:-10px;}
+#contact_form li:last-child {float:none;clear:both;text-align:center;width:auto;}
+
+
+/* Footer */
+.footer {text-align:center;padding:20px 0;}
+
+
+/* Media Queries */
+	/* Tablets and Desktop */
+@media only screen and (min-width: 768px) {
+/* Main slider */
+.main_slider li h5, .main_slider li .more_animation {display:block;}
+.main_slider li header {width:70%;position:relative;}
+.main_slider li.wind header:after {width:72px;height:240px;background-size:72px 240px;margin-left:-36px;left:10%;}
+.main_slider li.wind header .animation {width:280px;height:280px;background-size:280px 280px;top:-116px;margin-left:-140px;left:10%;}
+.main_slider li.wind .more_animation1 {width:115%;height:97px;background:url(../images/icons/cloud.png) no-repeat;background:url(../images/icons/cloud.svg) no-repeat, none;top:5%;left:0;position:absolute;-webkit-animation:wind 15s infinite linear;animation:wind 15s infinite linear;}
+.main_slider li.wind .more_animation2 {width:115%;height:70px;background:url(../images/icons/cloud2.png) no-repeat;background:url(../images/icons/cloud2.svg) no-repeat, none;top:20%;left:0;margin-left:30%;position:absolute;-webkit-animation:wind 25s infinite linear;animation:wind 25s infinite linear;opacity:.7;}
+.main_slider li.wind .more_animation3 {width:115%;height:30px;background:url(../images/icons/wind3.png) no-repeat;background:url(../images/icons/wind3.svg) no-repeat, none;top:25%;left:0;position:absolute;-webkit-animation:wind_blow 10s infinite linear;animation:wind_blow 10s infinite linear;opacity:.85;}
+.main_slider li.wind .more_animation4 {width:115%;height:30px;background:url(../images/icons/wind3.png) no-repeat;background:url(../images/icons/wind3.svg) no-repeat, none;top:15%;left:0;margin-left:60%;position:absolute;-webkit-animation:wind_blow 13s infinite linear;animation:wind_blow 13s infinite linear;}
+.main_slider li .description {max-width:540px;float:right;background:rgba(255,255,255,.2);padding:20px 20px 35px 20px;margin:-85px 0 0 40%;z-index:100;position:relative;}
+.main_slider li .description:before {content:'';display:block;width:30%;height:1px;background:rgba(255,255,255,.4);position:absolute;top:50%;right:100%;}
+.main_slider li .description:after {content:'';display:block;width:14px;height:14px;background:rgba(255,255,255,.4);position:absolute;top:50%;left:-30%;border-radius:50%;margin:-7px 0 0 -14px;}
+.main_slider li.solar header:after {width:260px;height:256px;background-size:260px 256px;margin-left:-128px;top:-23%;}
+.main_slider li.solar header .animation {width:260px;height:256px;background-size:260px 256px;margin-left:-128px;top:-23%;}
+.main_slider li.solar .description {margin:20% 10% 0 40%;}
+.main_slider li.solar .more_animation1 {width:355px;height:215px;background:url(../images/icons/sun_battery.png) no-repeat;background:url(../images/icons/sun_battery.svg) no-repeat, none;background-size:355px 215px;bottom:2%;right:100%;position:absolute;margin-right:40%;}
+.main_slider li.solar .more_animation2 {width:760px;height:760px;background:url(../images/icons/sun_light.png) no-repeat;background:url(../images/icons/sun_light.svg) no-repeat, none;background-size:760px 760px;top:-100%;left:50%;margin-left:-380px;position:absolute;opacity:.2;-webkit-animation:pulse 2.2s infinite linear;animation:pulse 2.2s infinite linear;}
+.main_slider li.water .description {float:left;margin:-150px 40% 0 0;}
+.main_slider li.water .description:before {width:15%;right:auto;left:100%;}
+.main_slider li.water .description:after {left:auto;right:-15%;margin:-7px -14px 0 0;}
+.main_slider li.water header .animation {width:113px;height:155px;background:url(../images/icons/drop.png) no-repeat;background:url(../images/icons/drop.svg) no-repeat, none;top:auto;bottom:20%;left:auto;right:15%;margin-left:0;-webkit-animation:none;animation:none;}
+.main_slider li.water header .animation:before {content:'';display:block;width:80px;height:75px;background:url(../images/icons/rotate.png) no-repeat;background:url(../images/icons/rotate.svg) no-repeat, none;position:absolute;bottom:19px;left:50%;margin-left:-40px;-webkit-animation:spin 3s infinite linear;animation:spin 3s infinite linear;}
+.main_slider li.water .more_animation1 {width:100%;height:100px;background:url(../images/icons/water.png) repeat-x;background:url(../images/icons/water.svg) repeat-x, none;bottom:0;left:0;position:absolute;-webkit-animation:water 15s infinite linear;animation:water 15s infinite linear;opacity:.8;}
+.main_slider li.water .more_animation1:before {content:'';display:block;width:100%;height:100px;background:url(../images/icons/water.png) repeat-x;background:url(../images/icons/water.svg) repeat-x, none;bottom:0;left:0;position:absolute;-webkit-animation:water 14s infinite linear;animation:water 14s infinite linear;opacity:.6;margin-left:-50px;}
+.main_slider .bx-pager {position:absolute;bottom:20px;left:0;width:100%;text-align:center;z-index:101;height:30px;font-size:0;line-height:0;}
+.main_slider .bx-pager .bx-pager-item {display:inline;}
+.main_slider .bx-pager .bx-pager-item .bx-pager-link {display:inline-block;vertical-align:middle;zoom:1;*display:inline;width:15px;height:15px;border-radius:50%;border:3px solid #fff;margin:0 15px;opacity:.6;background:url(../images/blank.gif);}
+.main_slider .bx-pager .bx-pager-item .bx-pager-link:hover {opacity:1;}
+.main_slider .bx-pager .bx-pager-item .active {opacity:1;background:#fff;}
+.main_slider .bx-prev, .main_slider .bx-next {position:absolute;top:0;left:0;z-index:101;display:block;width:65px;height:100%;background:url(../images/icons/arrow_left.png) center center no-repeat;background-color:rgba(255,255,255,.2);font-size:0;line-height:0;}
+.main_slider .bx-next {left:auto;right:0;background-image:url(../images/icons/arrow_right.png);}
+.main_slider .bx-prev:hover, .main_slider .bx-next:hover {background-color:rgba(255,255,255,.4);}
+/* Header */
+.header {top:100%;background:#fff;box-shadow:rgba(0,0,0,.2) 0 0 2px 0;height:85px;}
+.header.header_fixed {top:0;}
+.header.header_fixed h1 {display:block;}
+.header h1 a {background:url(../images/logo_desktop.png) no-repeat;background:url(../images/logo_desktop.svg) no-repeat, none;}
+	/* Top menu */
+.menu_trigger {display:none;}
+.header nav {display:block;position:relative;height:auto;width:auto;background:none;text-align:left;}
+.header nav:before {display:none;}
+.header nav ul {float:right;}
+.header nav ul li {float:left;font-size:20px;padding:28px 10px 0 10px;}
+.header nav ul li a, .header nav ul li a:visited {color:#000;}
+/* Container */
+.container {padding:100px 0;}
+.container .float_right {float:right;margin:0 0 30px 40px;}
+.container .float_left {float:left;margin:0 40px 30px 0;}
+.container h3 {padding:30px 0;}
+.container h4 {text-align:left;}
+.container p {padding-bottom:20px;}
+/* Energy block */
+.energy_block ul li {float:left;width:29.33%;}
+.energy_block ul li:nth-child(3n+1) {clear:both;}
+.energy_block ul li:nth-last-child(2), .energy_block ul li:nth-last-child(3) {padding-bottom:0;}
+/* Environment block */
+.environment_block ul li h5, .environment_block ul li p {text-align:right;}
+.environment_block ul li:nth-child(2n) h5, .environment_block ul li:nth-child(2n) p {text-align:left;}
+/* Contact block */
+#contact_form li {float:left;width:49%;}
+#contact_form li:first-child {float:right;}
+}
+
+	/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1180px) {
+/* Main slider */
+.main_slider li.solar .more_animation1 {width:255px;height:154px;background-size:255px 154px;bottom:10%;margin-right:30%;}
+.main_slider li.solar .description {margin-right:-8%;}
+.main_slider li.water header .animation {bottom:30%;right:0;}
+}
+
+	/* Desktop */
+@media only screen and (min-width: 960px) {
+}
